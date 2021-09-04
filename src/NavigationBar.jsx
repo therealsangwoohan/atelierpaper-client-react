@@ -19,7 +19,7 @@ export default function NavigationBar() {
       <Navbar.Toggle />
       <Navbar.Collapse>
         <Nav className="me-auto">
-          <Nav.Link as={Link} to="/users">Our Team</Nav.Link>
+          <Nav.Link as={Link} to="/users">Our Team!</Nav.Link>
         </Nav>
         <Nav>
           <Nav.Link as={Link} to="/create_project">Create Project</Nav.Link>

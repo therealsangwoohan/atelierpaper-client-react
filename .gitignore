@@ -1,6 +1,6 @@
 .vscode/
 node_modules/
-.env
+.env.production
 .eslintrc.json
 package-lock.json
 build/
