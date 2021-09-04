@@ -5,7 +5,7 @@ import useFetch from '../CustomHooks/useFetch';
 import ReducedProjectComponentList from '../Components/ProjectComponents/ReducedProjectComponentList';
 
 export default function HomeView() {
-  const { error, isPending, data: projects } = useFetch(`${process.env.REACT_APP_HOST}/api/projects/`);
+  const { error, isPending, data: projects } = useFetch(`${process.env.REACT_APP_BACKEND_HOST}/api/projects/`);
 
   return (
     <div className="HomeView">

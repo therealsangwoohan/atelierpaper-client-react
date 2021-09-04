@@ -16,7 +16,7 @@ export default function LogInView() {
     formData.append('email', email);
     formData.append('password', password);
 
-    const result = await fetch(`${process.env.REACT_APP_HOST}/api/sessions/`, {
+    const result = await fetch(`${process.env.REACT_APP_BACKEND_HOST}/api/sessions/`, {
       method: 'POST',
       body: formData,
     });

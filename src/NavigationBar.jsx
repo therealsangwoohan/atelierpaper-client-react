@@ -1,15 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import { Nav, Navbar, Button } from 'react-bootstrap';
 
 export default function NavigationBar() {
-  useEffect(async () => {
-    const result = await fetch(`${process.env.REACT_APP_HOST}/api/sessions/currentsessionid`);
-    console.log(result);
-  }, []);
-
   return (
     <Navbar
       bg="dark"

@@ -11,7 +11,7 @@ export default function useFetch(url) {
       setData(await res.json());
       setIsPending(false);
     } catch (err) {
-      setError(err);
+      setError(err.message);
     }
   }, [url]);
 
