@@ -12,8 +12,8 @@ export default function ReducedProjectComponent({ project }) {
     project_id, user_id, title,
   } = project;
 
-  const { error, imagesArePending, data: imageURLs } = useFetch(`${process.env.REACT_APP_BACKEND_HOST}/api/images/${project_id}/`);
-  const { error2, isPending, data: user } = useFetch(`${process.env.REACT_APP_BACKEND_HOST}/api/users/${user_id}`);
+  const { error, imagesArePending, data: imageURLs } = useFetch(`${process.env.REACT_APP_HOST}/api/images/${project_id}/`);
+  const { error2, isPending, data: user } = useFetch(`${process.env.REACT_APP_HOST}/api/users/${user_id}`);
 
   return (
     <Card className="ReducedProjectComponent">

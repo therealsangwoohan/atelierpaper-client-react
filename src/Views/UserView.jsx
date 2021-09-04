@@ -8,7 +8,7 @@ import FullUserComponent from '../Components/UserComponents/FullUserComponent';
 export default function UserView() {
   const { user_id } = useParams();
 
-  const { error, isPending, data: user } = useFetch(`${process.env.REACT_APP_BACKEND_HOST}/api/users/${user_id}`);
+  const { error, isPending, data: user } = useFetch(`${process.env.REACT_APP_HOST}/api/users/${user_id}`);
 
   return (
     <div className="ProjectView">
