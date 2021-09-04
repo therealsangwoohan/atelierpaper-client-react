@@ -23,6 +23,8 @@ export default function NavigationBar() {
         </Nav>
         <Nav>
           <Nav.Link as={Link} to="/create_project">Create Project</Nav.Link>
+          <Nav.Link as={Link} to="/register">Register</Nav.Link>
+          <Nav.Link as={Link} to="/login">Log In</Nav.Link>
           <Button size="sm">Log Out</Button>
         </Nav>
       </Navbar.Collapse>
