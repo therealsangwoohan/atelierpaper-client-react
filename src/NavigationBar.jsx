@@ -33,12 +33,19 @@ export default function NavigationBar() {
           <Nav.Link as={Link} to="/users">Our Team</Nav.Link>
         </Nav>
         <Nav>
-          {currentUserId && <Nav.Link as={Link} to={`/users/${currentUserId}`}>My Profile</Nav.Link>}
-          <Nav.Link as={Link} to="/create_project">Create Project</Nav.Link>
-          <Button size="sm">Log Out</Button>
-
-          <Nav.Link as={Link} to="/register">Register</Nav.Link>
-          <Nav.Link as={Link} to="/login">Log In</Nav.Link>
+          {currentUserId && (
+          <>
+            <Nav.Link as={Link} to={`/users/${currentUserId}`}>My Profile</Nav.Link>
+            <Nav.Link as={Link} to="/create_project">Create Project</Nav.Link>
+            <Button size="sm">Log Out</Button>
+          </>
+          )}
+          {!currentUserId && (
+          <>
+            <Nav.Link as={Link} to="/register">Register</Nav.Link>
+            <Nav.Link as={Link} to="/login">Log In</Nav.Link>
+          </>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
