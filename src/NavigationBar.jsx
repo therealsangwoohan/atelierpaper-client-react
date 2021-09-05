@@ -10,7 +10,8 @@ export default function NavigationBar() {
   useEffect(async () => {
     try {
       const res = await fetch(`${process.env.REACT_APP_PROTOCOL_DOMAIN}/api/sessions/currentsessionid`);
-      console.log(res);
+      const resJSON = await res.json();
+      console.log(resJSON);
     } catch (error) {
       console.log(error);
     }
