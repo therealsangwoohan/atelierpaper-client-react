@@ -29,7 +29,8 @@ export default function NavigationBar() {
           <Nav.Link as={Link} to="/users">Our Team</Nav.Link>
         </Nav>
         <Nav>
-          {userData && <Nav.Link as={Link} to={`/users/${userData[0].user_id}`}>Create Project</Nav.Link>}
+          {isPending && ''}
+          {userData && <Nav.Link as={Link} to={`/users/${userData[0].user_id}`}>{userData[0].last_name} {userData[0].first_name}</Nav.Link>}
           <Nav.Link as={Link} to="/create_project">Create Project</Nav.Link>
           <Button size="sm">Log Out</Button>
 
