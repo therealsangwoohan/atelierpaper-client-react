@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import { Nav, Navbar, Button } from 'react-bootstrap';
 
-import useFetch from './CustomHooks/useFetch';
-
 export default function NavigationBar() {
-  const { error, isPending, data: userData } = useFetch(`${process.env.REACT_APP_PROTOCOL_DOMAIN}/api/sessions/currentsessionid`);
+  // const [currentUserId, setCurrentUserId] = useState(null);
 
-  console.log(error);
-  console.log(isPending);
+  useEffect(async () => {
+    try {
+      const res = await fetch(`${process.env.REACT_APP_PROTOCOL_DOMAIN}/api/sessions/currentsessionid`);
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  });
 
   return (
     <Navbar
@@ -29,8 +33,6 @@ export default function NavigationBar() {
           <Nav.Link as={Link} to="/users">Our Team</Nav.Link>
         </Nav>
         <Nav>
-          {isPending && ''}
-          {userData && <Nav.Link as={Link} to={`/users/${userData[0].user_id}`}>{userData[0].last_name} {userData[0].first_name}</Nav.Link>}
           <Nav.Link as={Link} to="/create_project">Create Project</Nav.Link>
           <Button size="sm">Log Out</Button>
 
