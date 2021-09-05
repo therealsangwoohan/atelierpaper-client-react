@@ -4,7 +4,17 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Nav, Navbar, Button } from 'react-bootstrap';
 
-export default function NavigationBar() {
+import Cookies from 'js-cookie';
+
+export default async function NavigationBar() {
+  const currentUserId = await (await fetch(Cookies.get('session_id')));
+
+  if (currentUserId === undefined) {
+    return (
+      <h1>Not Logged In</h1>
+    );
+  }
+
   return (
     <Navbar
       bg="dark"
