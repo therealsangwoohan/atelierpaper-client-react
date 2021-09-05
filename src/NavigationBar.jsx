@@ -1,17 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import { Nav, Navbar, Button } from 'react-bootstrap';
 
 export default function NavigationBar() {
-  // const [currentUserId, setCurrentUserId] = useState(null);
+  const [currentUserId, setCurrentUserId] = useState(null);
 
   useEffect(async () => {
     try {
       const res = await fetch(`${process.env.REACT_APP_PROTOCOL_DOMAIN}/api/sessions/currentsessionid`);
-      const resJSON = await res.json();
-      console.log(resJSON);
+      setCurrentUserId((await res.json()).currentUserId);
     } catch (error) {
       console.log(error);
     }
@@ -34,6 +33,7 @@ export default function NavigationBar() {
           <Nav.Link as={Link} to="/users">Our Team</Nav.Link>
         </Nav>
         <Nav>
+          {currentUserId && <Nav.Link as={Link} to={`/users/${currentUserId}`}>My Profile</Nav.Link>}
           <Nav.Link as={Link} to="/create_project">Create Project</Nav.Link>
           <Button size="sm">Log Out</Button>
 
