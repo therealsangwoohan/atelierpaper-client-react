@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Nav, Navbar, Button } from 'react-bootstrap';
 
-import Cookies from 'js-cookie';
-
 export default async function NavigationBar() {
-  const currentUserId = await (await fetch(Cookies.get('session_id')));
+  const currentUserId = await (await fetch(`${process.env.REACT_APP_PROTOCOL_DOMAIN}/api/sessions/currentsessionid`));
 
   if (currentUserId === undefined) {
     return (
