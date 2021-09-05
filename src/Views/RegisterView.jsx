@@ -34,7 +34,7 @@ export default function RegisterView() {
     formData.append('phone_number', phoneNumber);
     formData.append('specialPermission', specialPermission);
 
-    const result = await fetch(`${process.env.REACT_APP_HOST}/api/users/`, {
+    const result = await fetch(`${process.env.REACT_APP_PROTOCOL_DOMAIN}/api/users/`, {
       method: 'POST',
       body: formData,
     });

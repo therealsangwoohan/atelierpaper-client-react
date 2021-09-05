@@ -8,7 +8,7 @@ import FullProjectComponent from '../Components/ProjectComponents/FullProjectCom
 export default function ProjectView() {
   const { project_id } = useParams();
 
-  const { error, isPending, data: project } = useFetch(`${process.env.REACT_APP_HOST}/api/projects/${project_id}`);
+  const { error, isPending, data: project } = useFetch(`${process.env.REACT_APP_PROTOCOL_DOMAIN}/api/projects/${project_id}`);
 
   return (
     <div className="ProjectView">
