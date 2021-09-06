@@ -39,7 +39,7 @@ export default function LogInView() {
     <Card>
       <Card.Body>
         <Card.Title className="text-center">
-          Are you an Employee?
+          Are you an employee?
         </Card.Title>
         <form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">

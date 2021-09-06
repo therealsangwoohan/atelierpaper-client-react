@@ -47,7 +47,7 @@ export default function RegisterView() {
     }
 
     if (error_message === "You don't have the permission to create an account.") {
-      alert("You don't have the permission to create an account.");
+      alert('Invalid Employee Id');
       setSpecialPermission('');
       return;
     }
@@ -64,7 +64,7 @@ export default function RegisterView() {
     <Card>
       <Card.Body>
         <Card.Title className="text-center">
-          Create New Account
+          Are you an employee?
         </Card.Title>
         <form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -96,8 +96,8 @@ export default function RegisterView() {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicSpecialPermission">
-            <Form.Label>Special Permission Code</Form.Label>
-            <Form.Control type="text" placeholder="Enter special permission code" value={specialPermission} onChange={(e) => setSpecialPermission(e.target.value)} required />
+            <Form.Label>Employee Id</Form.Label>
+            <Form.Control type="text" placeholder="Enter employee Id" value={specialPermission} onChange={(e) => setSpecialPermission(e.target.value)} required />
           </Form.Group>
           <Button variant="primary" type="submit">
             Register

@@ -8,7 +8,7 @@ export default function TeamView() {
   const { error, isPending, data: users } = useFetch(`${process.env.REACT_APP_PROTOCOL_DOMAIN}/api/users/`);
 
   return (
-    <div className="HomeView">
+    <div className="TeamView">
       { error && <div>{ error }</div> }
       { isPending && <div>Loading...</div> }
       { users && <ReducedUserComponentList users={users} /> }
